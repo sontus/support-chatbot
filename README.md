@@ -1,10 +1,10 @@
 # Laravel Support Chatbot
 
-A production-ready, AI-powered support chatbot package for Laravel applications. This package seamlessly integrates an intelligent, context-aware chatbot into your application using the Laravel AI SDK.
+A production-ready, AI-powered support chatbot package for Laravel applications. This package seamlessly integrates an intelligent, context-aware chatbot into your application. It uses direct HTTP integrations without heavy dependencies.
 
 ## Features
 
-- **AI Integration**: Powered by Laravel AI SDK (supports OpenAI, Claude, Gemini).
+- **AI Integration**: Directly supports OpenAI and Gemini models without requiring PHP 8.4 dependencies.
 - **Knowledge Base (RAG)**: Admin panel to add FAQs and documentation, searchable via AI embeddings.
 - **Context Awareness**: The chatbot automatically understands the logged-in user, their orders, and tickets.
 - **Frontend Widget**: A sleek, customizable, floating Vanilla JS widget for real-time chat. Drop it into any site!
@@ -49,8 +49,15 @@ php artisan migrate
 4. **Configure Environment:**
 Add the following to your `.env` file:
 ```env
-CHATBOT_AI_PROVIDER=openai
-CHATBOT_AI_MODEL=gpt-4o-mini
+CHATBOT_AI_API_KEY="your_api_key_here"
+
+# For Gemini (Default)
+CHATBOT_AI_PROVIDER=gemini
+CHATBOT_AI_MODEL=gemini-2.0-flash
+
+# For OpenAI
+# CHATBOT_AI_PROVIDER=openai
+# CHATBOT_AI_MODEL=gpt-4o-mini
 ```
 
 ## Usage

@@ -1,7 +1,8 @@
 {
     "name": "sontus/laravel-support-chatbot",
-    "description": "AI-powered support chatbot package for Laravel using Laravel AI SDK.",
+    "description": "AI-powered support chatbot package for Laravel with direct Gemini and OpenAI integration.",
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": "^8.2",
         "illuminate/support": "^11.0|^12.0|^13.0",

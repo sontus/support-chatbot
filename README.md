@@ -16,24 +16,8 @@ A production-ready, AI-powered support chatbot package for Laravel applications.
 
 1. **Install via Composer:**
 
-If this package is published to packagist:
 ```bash
 composer require sontus/laravel-support-chatbot
-```
-
-**For Local Development / Testing:**
-Add the package path to your main Laravel `composer.json` repositories section:
-```json
-"repositories": [
-    {
-        "type": "path",
-        "url": "packages/laravel-support-chatbot"
-    }
-]
-```
-Then require it using the `@dev` tag:
-```bash
-composer require sontus/laravel-support-chatbot *@dev
 ```
 
 2. **Run the installation command:**
@@ -58,6 +42,12 @@ CHATBOT_AI_MODEL=gemini-2.0-flash
 # For OpenAI
 # CHATBOT_AI_PROVIDER=openai
 # CHATBOT_AI_MODEL=gpt-4o-mini
+```
+
+5. **Start the Queue Worker:**
+Because the chatbot processes AI requests asynchronously to ensure high performance and avoid blocking your app, you need to run a queue worker:
+```bash
+php artisan queue:work
 ```
 
 ## Usage
